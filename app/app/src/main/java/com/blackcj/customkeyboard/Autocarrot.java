@@ -24,15 +24,15 @@ public class Utils {
 	}
 
 	public String messUpMessyPart(String messyPart) {
-		StringBuilder sb = new StringBuider();
+		StringBuilder sb = new StringBuilder();
 		int a = rand.nextInt(0, messyPart.length());
 		int b = rand.nextInt(0, messyPart.length() - 1);
 		if (a == b) {
 			b += 1;
 		}
 
-		lb = Math.min(a, b);
-		ub = Math.max(a, b);
+		int lb = Math.min(a, b);
+		int ub = Math.max(a, b);
 
 		sb.append(messyPart.substring(0, a));
 		sb.append(messyPart.charAt(a));
