@@ -528,10 +528,14 @@ public class SoftKeyboard extends InputMethodService
         Log.d("Test","KEYCODE: " + primaryCode);
         if (isWordSeparator(primaryCode)) {
             // Handle separator
-            if (mSuggestions.isEmpty()) {
-                commitTyped(getCurrentInputConnection());
+            if (mSuggestions != null) {
+                if (mSuggestions.isEmpty()) {
+                    commitTyped(getCurrentInputConnection());
+                } else {
+                    pickDefaultCandidate();
+                }
             } else {
-                pickDefaultCandidate();
+                commitTyped(getCurrentInputConnection());
             }
             sendKey(primaryCode);
             updateShiftKeyState(getCurrentInputEditorInfo());
