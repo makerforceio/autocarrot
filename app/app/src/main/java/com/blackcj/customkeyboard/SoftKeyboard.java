@@ -200,7 +200,7 @@ public class SoftKeyboard extends InputMethodService
                 // user types).
                 mCurKeyboard = mQwertyKeyboard;
                 mPredictionOn = true;
-                
+
                 // We now look for a few special variations of text that will
                 // modify our behavior.
                 int variation = attribute.inputType & InputType.TYPE_MASK_VARIATION;
@@ -527,8 +527,10 @@ public class SoftKeyboard extends InputMethodService
         Log.d("Test","KEYCODE: " + primaryCode);
         if (isWordSeparator(primaryCode)) {
             // Handle separator
-            if (mComposing.length() > 0) {
+            if (mSuggestions.isEmpty()) {
                 commitTyped(getCurrentInputConnection());
+            } else {
+                pickDefaultCandidate();
             }
             sendKey(primaryCode);
             updateShiftKeyState(getCurrentInputEditorInfo());
@@ -580,8 +582,10 @@ public class SoftKeyboard extends InputMethodService
             if (mComposing.length() > 0) {
                 ArrayList<String> list = new ArrayList<String>();
                 //list.add(mComposing.toString());
+                mComposing.append("z");
                 Log.d("SoftKeyboard", "REQUESTING: " + mComposing.toString());
                 mScs.getSentenceSuggestions(new TextInfo[] {new TextInfo(mComposing.toString())}, 5);
+                mComposing.deleteCharAt(mComposing.length() - 1);
                 setSuggestions(list, true, true);
             } else {
                 setSuggestions(null, false, false);
