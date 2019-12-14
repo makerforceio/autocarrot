@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.blackcj.customkeyboard;
+package com.blackcj.autocarrot;
 
 import android.app.Dialog;
 import android.content.Context;

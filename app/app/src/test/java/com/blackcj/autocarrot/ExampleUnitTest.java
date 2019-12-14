@@ -1,4 +1,4 @@
-package com.blackcj.customkeyboard;
+package com.blackcj.autocarrot;
 
 import org.junit.Test;
 
