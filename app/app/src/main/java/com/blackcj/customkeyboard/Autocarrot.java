@@ -38,9 +38,9 @@ public class Utils {
 		b = ub;
 
 		sb.append(messyPart.substring(0, a));
-		sb.append(messyPart.charAt(a));
-		sb.append(messyPart.substring(a+1, b));
 		sb.append(messyPart.charAt(b));
+		sb.append(messyPart.substring(a+1, b));
+		sb.append(messyPart.charAt(a));
 		sb.append(messyPart.substring(b+1));
 
 		return sb.toString();
