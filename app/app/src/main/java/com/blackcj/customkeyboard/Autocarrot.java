@@ -11,7 +11,7 @@ public class Utils {
 	public List<String> carrotify(final List<String> suggestions) {
 		for (int i = 0; i < suggestions.size(); ++i) {
 			String suggestion = suggestions.get(i);
-			if (suggestion.length() > 4) {
+			if (suggestion.length() > 3) {
 				StringBuilder sb = new StringBuilder();
 				sb.append(suggestion.charAt(0);
 				sb.append(messUpMessyPart(suggestions[i].substring(1, suggestion.length() - 1)));
@@ -26,7 +26,7 @@ public class Utils {
 	public String messUpMessyPart(String messyPart) {
 		StringBuilder sb = new StringBuilder();
 		int a = rand.nextInt(messyPart.length());
-		int b = rand.nextInt(0messyPart.length() - 1);
+		int b = rand.nextInt(mmessyPart.length() - 1);
 		if (a == b) {
 			b += 1;
 		}
