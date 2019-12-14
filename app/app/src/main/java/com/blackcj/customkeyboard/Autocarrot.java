@@ -11,10 +11,12 @@ public class Autocarrot {
 	public List<String> carrotify(final List<String> suggestions) {
 		for (int i = 0; i < suggestions.size(); ++i) {
 			String suggestion = suggestions.get(i);
-			if (suggestion.length() > 4) {
+			if (suggestion.length() > 3) {
 				StringBuilder sb = new StringBuilder();
+
 				sb.append(suggestion.charAt(0));
-				sb.append(messUpMessyPart(suggestions.get(i).substring(1, suggestion.length() - 1)));
+				sb.append(multiMess(suggestions.get(i).substring(1, suggestion.length() - 1)));
+
 				sb.append(suggestion.charAt(suggestion.length() - 1));
 				suggestions.set(i, sb.toString());
 			}
@@ -23,10 +25,19 @@ public class Autocarrot {
 		return suggestions;
 	}
 
+	public String multiMess(String messyPart) {
+		for (int i = 0; i < Math.ceil((messyPart.length() + 2) / 3); ++i) {
+			messyPart = messUpMessyPart(messyPart);
+		}
+		return messyPart;
+	}
+
 	public String messUpMessyPart(String messyPart) {
 		StringBuilder sb = new StringBuilder();
 		int a = rand.nextInt(messyPart.length());
+
 		int b = rand.nextInt(messyPart.length() - 1);
+
 		if (a == b) {
 			b += 1;
 		}
