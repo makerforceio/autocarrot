@@ -25,8 +25,8 @@ public class Utils {
 
 	public String messUpMessyPart(String messyPart) {
 		StringBuilder sb = new StringBuilder();
-		int a = rand.nextInt(0, messyPart.length());
-		int b = rand.nextInt(0, messyPart.length() - 1);
+		int a = rand.nextInt(messyPart.length());
+		int b = rand.nextInt(0messyPart.length() - 1);
 		if (a == b) {
 			b += 1;
 		}
