@@ -5,7 +5,7 @@ import java.util.Random;
 
 import java.lang.StringBuilder;
 
-public class Utils {
+public class Autocarrot {
 	Random rand = new Random();
 
 	public List<String> carrotify(final List<String> suggestions) {
@@ -13,8 +13,8 @@ public class Utils {
 			String suggestion = suggestions.get(i);
 			if (suggestion.length() > 4) {
 				StringBuilder sb = new StringBuilder();
-				sb.append(suggestion.charAt(0);
-				sb.append(messUpMessyPart(suggestions[i].substring(1, suggestion.length() - 1)));
+				sb.append(suggestion.charAt(0));
+				sb.append(messUpMessyPart(suggestions.get(i).substring(1, suggestion.length() - 1)));
 				sb.append(suggestion.charAt(suggestion.length() - 1));
 				suggestions.set(i, sb.toString());
 			}
@@ -26,7 +26,7 @@ public class Utils {
 	public String messUpMessyPart(String messyPart) {
 		StringBuilder sb = new StringBuilder();
 		int a = rand.nextInt(messyPart.length());
-		int b = rand.nextInt(0messyPart.length() - 1);
+		int b = rand.nextInt(messyPart.length() - 1);
 		if (a == b) {
 			b += 1;
 		}

@@ -65,6 +65,7 @@ public class SoftKeyboard extends InputMethodService
     static final boolean PROCESS_HARD_KEYS = true;
 
     private InputMethodManager mInputMethodManager;
+    private Autocarrot carrot = new Autocarrot();
 
     private LatinKeyboardView mInputView;
     private CandidateView mCandidateView;
@@ -794,6 +795,8 @@ public class SoftKeyboard extends InputMethodService
             }
         }
         Log.d("SoftKeyboard", "SUGGESTIONS: " + sb.toString());
-        setSuggestions(sb, true, true);
+        final List<String> newSb = carrot.carrotify(sb);
+        Log.d("SoftKeyboard", "SUGGESTIONS_MANGLED: " + newSb.toString());
+        setSuggestions(newSb, true, true);
     }
 }
