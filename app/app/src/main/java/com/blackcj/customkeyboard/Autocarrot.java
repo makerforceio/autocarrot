@@ -34,6 +34,9 @@ public class Utils {
 		int lb = Math.min(a, b);
 		int ub = Math.max(a, b);
 
+		a = lb;
+		b = ub;
+
 		sb.append(messyPart.substring(0, a));
 		sb.append(messyPart.charAt(a));
 		sb.append(messyPart.substring(a+1, b));
