@@ -1,4 +1,4 @@
-![Logomark](./mark.png | width=80)
+<img width="200" alt="Logomark" src="https://raw.githubusercontent.com/solderneer/autocarrot/master/mark.png">
 
 # autocarrot 
 > auto🥕 : A super silly project 🤪, to autocorrect your correct spelling to a typo 
@@ -7,4 +7,4 @@
 2. Let autocarrot help you unfix things
 3. Profit :)
 
-![Screenshot](./Screenshot_1576311284.png | width=100)
+<img width="200" alt="Screenshot" src="https://raw.githubusercontent.com/solderneer/autocarrot/master/Screenshot_1576311284.png">
