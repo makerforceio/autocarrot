@@ -1,4 +1,4 @@
-![Logomark](./mark.png)
+![Logomark](./mark.png | width=80)
 
 # autocarrot 
 > auto🥕 : A super silly project 🤪, to autocorrect your correct spelling to a typo 
@@ -7,4 +7,4 @@
 2. Let autocarrot help you unfix things
 3. Profit :)
 
-![Screenshot](./Screenshot_1576311284.png)
+![Screenshot](./Screenshot_1576311284.png | width=100)
